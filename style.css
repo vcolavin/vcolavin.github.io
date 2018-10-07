@@ -50,10 +50,11 @@ a:link, a:visited, a:hover, a:active {
 
 .intro-blurb {
   text-align: center;
+  margin: 0 40px;
 }
 
 .intro-blurb > p {
-
+  margin-bottom: 20px;
 }
 
 .intro-links {
