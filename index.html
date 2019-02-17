@@ -9,26 +9,54 @@
 			rel="stylesheet"
 			type="text/css"
 			media="screen"
-			href="style.css"
+			href="reset.css"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			media="screen"
-			href="reset.css"
+			href="style.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Supermercado+One"
+			rel="stylesheet"
 		/>
 	</head>
 	<body>
-		<h1 class="page-title">
-			Vincent Colavin
-		</h1>
+		<div class="main-container">
+			<h1>
+				<span class="page-title">
+					Vincent Colavin
+				</span>
+			</h1>
 
-		<img src="assets/my_face.png" alt="a beautiful picture of my face" />
-		<nav>
-			<a href="assets/colavin_resume.pdf">Resume</a>
-			<a href="https://vcolavin.wordpress.com">Blog</a>
-			<a href="mailto:vcolavin@gmail.com">Email</a>
-			<a href="#">Portfolio</a>
-		</nav>
+			<div role="img" class="face">
+				<img
+					class="face-top face-half"
+					src="assets/my_face_top.png"
+					alt="a beautiful picture of the top half of my face"
+				/>
+				<img
+					class="face-bottom face-half"
+					src="assets/my_face_bottom.png"
+					alt="a beautiful picture of the top half of my face"
+				/>
+			</div>
+			<div class="blurb">
+				<p>
+					Hello. I'm a web developer and a suicide crisis line worker
+					in Portland, Oregon.
+				</p>
+				<p>
+					I like to build beautiful, performant, and accessible UIs.
+				</p>
+			</div>
+			<nav class="nav-menu">
+				<a href="assets/colavin_resume.pdf">Resume</a>
+				<a href="https://vcolavin.wordpress.com">Blog</a>
+				<a href="mailto:vcolavin@gmail.com">Email</a>
+				<a href="#">Portfolio</a>
+			</nav>
+		</div>
 	</body>
 </html>

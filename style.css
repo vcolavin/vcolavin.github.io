@@ -1,8 +1,96 @@
 :root {
-	font-size: 10px + 3vw;
+	font-size: 16px;
+	box-sizing: border-box;
+	/* background-color: yellow; */
+}
+
+@media (min-width: 500px) {
+	:root {
+		font-size: calc(15px + 2vw);
+	}
+}
+
+@media (min-width: 1200px) {
+	:root {
+		font-size: 40px;
+	}
+}
+
+* {
+	box-sizing: inherit;
+}
+
+h1,
+h2 {
+	font-family: 'Supermercado One', sans-serif;
+}
+
+p {
+	font-family: 'Baskerville', serif;
+}
+
+.main-container {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+	width: 100vw;
 }
 
 .page-title {
+	--background-color: darkorange;
+	--color: white;
+	--left-padding: 3rem;
+
+	position: relative;
+	left: var(--left-padding);
+
 	word-spacing: 100vw;
 	font-size: 3rem;
+	color: var(--color);
+	display: inline;
+
+	background: var(--background-color);
+	box-shadow: 20px 0 0 var(--background-color),
+		calc(-1 * var(--left-padding)) 0 0 var(--background-color);
+	box-decoration-break: clone;
+	line-height: 4rem;
+}
+
+.face {
+	animation: face-slide 1s ease-out;
+
+	position: relative;
+
+	width: 300px;
+}
+
+.face-half {
+	width: 100%;
+	position: absolute;
+}
+
+.face-top {
+	top: 0;
+	left: 0;
+}
+
+.face-bottom {
+	bottom: 0;
+	left: 0;
+}
+
+.blurb,
+.nav-menu {
+	display: none;
+	position: absolute;
+}
+
+@keyframes face-slide {
+	from {
+		right: 110%;
+	}
+
+	to {
+		right: 0;
+	}
 }
