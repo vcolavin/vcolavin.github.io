@@ -36,24 +36,21 @@ p {
 	width: 100vw;
 }
 
-.page-title {
-	--background-color: darkorange;
-	--color: white;
-	--left-padding: 3rem;
+.page-title-name {
+	display: table;
 
-	position: relative;
-	left: var(--left-padding);
-
-	word-spacing: 100vw;
 	font-size: 3rem;
-	color: var(--color);
-	display: inline;
+	color: white;
+	background-color: darkorange;
 
-	background: var(--background-color);
-	box-shadow: 20px 0 0 var(--background-color),
-		calc(-1 * var(--left-padding)) 0 0 var(--background-color);
-	box-decoration-break: clone;
-	line-height: 4rem;
+	padding: 0 0.5rem 0 1rem;
+
+	margin-bottom: 1rem;
+}
+
+.page-title-name:not(:first-of-type) {
+	padding-left: 4rem;
+	margin-bottom: 0;
 }
 
 .face {
@@ -67,16 +64,26 @@ p {
 .face-half {
 	width: 100%;
 	position: absolute;
+	transition: all 1s;
+	left: 0;
 }
 
 .face-top {
 	top: 0;
-	left: 0;
+
+	transform-origin: 0 100%;
 }
 
 .face-bottom {
-	bottom: 0;
-	left: 0;
+	top: 215px;
+}
+
+.face-top.open {
+	transform: rotate(-45deg);
+}
+
+.face-bottom.open {
+	top: calc(100% - 215px);
 }
 
 .blurb,
