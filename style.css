@@ -108,7 +108,13 @@ a:focus {
 }
 
 .open .face-top {
-	transform: rotate(-30deg) translateY(-100px);
+	transform: rotate(-90deg) translateY(-100px);
+}
+
+@media (min-width: 500px) {
+	.open .face-top {
+		transform: rotate(-30deg) translateY(-100px);
+	}
 }
 
 .face-bottom {

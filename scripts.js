@@ -20,10 +20,8 @@ function runTheCode() {
 	}
 
 	animationToggle.addEventListener('change', () => {
-		const cookieExpiresInDays = 100;
-		const date = new Date().setTime(
-			new Date().getTime() + cookieExpiresInDays * 24 * 60 * 60 * 1000
-		);
+		const aHundredDays = 100 * 24 * 60 * 60 * 1000;
+		const date = new Date().setTime(new Date().getTime() + aHundredDays);
 
 		if (animationToggle.checked) {
 			mainContainer.classList.add('disable-animation');
