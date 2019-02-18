@@ -24,7 +24,7 @@
 		<script src="scripts.js"></script>
 	</head>
 	<body>
-		<div class="main-container">
+		<div class="main-container" id="main-container">
 			<h1>
 				<span class="page-title-name">Vincent</span>
 				<span class="page-title-name">Colavin</span>
@@ -44,23 +44,36 @@
 					alt="a beautiful picture of the bottom half of my face"
 				/>
 				<button class="face-toggle-button">click here</button>
-				<div class="intro-text">
-					<p>
-						Hello. I'm a web developer and a suicide crisis line
-						worker in Portland, Oregon.
-					</p>
-					<p>
-						I like to build beautiful, performant, and accessible
-						UIs.
+				<div class="face-text-content">
+					<p class="intro-text">
+						Hello. My name is Vincent, and I'm a web developer and a
+						suicide crisis line worker in Portland, Oregon. I like
+						to build beautiful, performant, and accessible UIs.
 					</p>
 					<nav class="nav-menu">
-						<a href="assets/colavin_resume.pdf">Resume</a>
-						<a href="https://vcolavin.wordpress.com">Blog</a>
-						<a href="mailto:vcolavin@gmail.com">Email</a>
-						<a href="#">Portfolio</a>
+						<a class="nav-item" href="assets/colavin_resume.pdf"
+							>Resume</a
+						>
+						<a
+							class="nav-item"
+							href="https://vcolavin.wordpress.com"
+							>Blog</a
+						>
+						<a class="nav-item" href="mailto:vcolavin@gmail.com"
+							>Email</a
+						>
+						<!-- <a class="nav-item" href="#">Portfolio</a> -->
 					</nav>
 				</div>
 			</div>
+			<footer class="footer">
+				<div class="animation-toggle">
+					<input type="checkbox" id="animation-toggle" />
+					<label for="animation-toggle"
+						>disable animation (uses cookies)</label
+					>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

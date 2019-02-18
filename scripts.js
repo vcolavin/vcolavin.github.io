@@ -7,26 +7,43 @@ document.documentElement.style.setProperty(
 	`${faceAnimationDuration}s`
 );
 
+const animationCookieName = 'animationDisabled';
+
 function runTheCode() {
 	const face = document.querySelector('#face');
-	const topHalf = document.querySelector('#top-half');
-	const bottomHalf = document.querySelector('#bottom-half');
+	const animationToggle = document.querySelector('#animation-toggle');
+	const mainContainer = document.querySelector('#main-container');
 
+	if (document.cookie.indexOf(`${animationCookieName}=true`) >= 0) {
+		mainContainer.classList.add('disable-animation');
+		face.classList.add('open');
+	}
+
+	animationToggle.addEventListener('change', () => {
+		const cookieExpiresInDays = 100;
+		const date = new Date().setTime(
+			new Date().getTime() + cookieExpiresInDays * 24 * 60 * 60 * 1000
+		);
+
+		if (animationToggle.checked) {
+			mainContainer.classList.add('disable-animation');
+			face.classList.add('open');
+		}
+
+		document.cookie = `${animationCookieName}=${
+			animationToggle.checked
+		}; expires=${date};path=/`;
+	});
+
+	// face stuff
 	let faceOpen = false;
-
-	face.addEventListener('click', handleFaceClick);
-
-	function handleFaceClick() {
+	face.addEventListener('click', () => {
 		if (faceOpen) {
 			return;
 		}
 
 		faceOpen = true;
 
-		face.classList.toggle('open');
-
-		// window.setTimeout(() => {
-		// 	faceTransitioning = false;
-		// }, faceAnimationDuration * 1000);
-	}
+		face.classList.add('open');
+	});
 }
