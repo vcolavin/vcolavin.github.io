@@ -191,6 +191,10 @@ a:focus {
 	width: 80%;
 }
 
+.intro-text {
+	margin-bottom: 0.8rem;
+}
+
 .footer {
 	position: fixed;
 	bottom: 0;
