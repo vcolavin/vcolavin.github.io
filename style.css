@@ -50,6 +50,13 @@ a:focus {
 	flex-direction: column;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
 .disable-animation * {
 	animation: none !important;
 	transition: none !important;
@@ -83,7 +90,6 @@ a:focus {
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
-	/* overflow: hidden; */
 }
 
 .face.open {
