@@ -17,6 +17,7 @@ function runTheCode() {
 	if (document.cookie.indexOf(`${animationCookieName}=true`) >= 0) {
 		mainContainer.classList.add('disable-animation');
 		face.classList.add('open');
+		animationToggle.checked = true;
 	}
 
 	animationToggle.addEventListener('change', () => {
