@@ -1,7 +1,10 @@
 :root {
 	font-size: 16px;
 	box-sizing: border-box;
-	/* background-color: yellow; */
+
+	--face-animation-duration: 2s;
+	--face-side: 300px;
+	--face-bottom-top: calc(var(--face-side) * 0.716);
 }
 
 @media (min-width: 500px) {
@@ -30,10 +33,10 @@ p {
 }
 
 .main-container {
-	display: grid;
-	grid-template-rows: auto 1fr;
 	height: 100vh;
 	width: 100vw;
+	display: flex;
+	flex-direction: column;
 }
 
 .page-title-name {
@@ -45,7 +48,7 @@ p {
 
 	padding: 0 0.5rem 0 1rem;
 
-	margin-bottom: 1rem;
+	margin-bottom: 0.75rem;
 }
 
 .page-title-name:not(:first-of-type) {
@@ -58,13 +61,20 @@ p {
 
 	position: relative;
 
-	width: 300px;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	/* overflow: hidden; */
+}
+
+.face.open {
+	cursor: default;
 }
 
 .face-half {
-	width: 100%;
+	width: var(--face-side);
 	position: absolute;
-	transition: all 1s;
+	transition: all var(--face-animation-duration);
 	left: 0;
 }
 
@@ -74,22 +84,49 @@ p {
 	transform-origin: 0 100%;
 }
 
+.open .face-top {
+	transform: rotate(-30deg) translateY(-100px);
+}
+
 .face-bottom {
-	top: 215px;
+	left: -1px;
+	top: var(--face-bottom-top);
+	bottom: auto;
 }
 
-.face-top.open {
-	transform: rotate(-45deg);
+.open .face-bottom {
+	/* TODO: how to stop this from affecting the scroll? */
+	/* is that desirable? */
+	top: 100%;
 }
 
-.face-bottom.open {
-	top: calc(100% - 215px);
-}
-
-.blurb,
-.nav-menu {
-	display: none;
+.face-toggle-button {
+	cursor: pointer;
 	position: absolute;
+	left: 50vw;
+	transform: translateY(-50%);
+	top: calc(var(--face-side) + 20px);
+	transition: all var(--face-animation-duration);
+}
+
+.open .face-toggle-button {
+	cursor: default;
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media (min-width: 500px) {
+	.face-toggle-button {
+		top: calc(var(--face-side) - 80px);
+		left: calc(var(--face-side) - 30px);
+		transform: translateY(-50%);
+	}
+}
+
+.intro-text {
+	position: absolute;
+	font-size: 1rem;
+	display: none;
 }
 
 @keyframes face-slide {
