@@ -21,15 +21,12 @@
 
 * {
 	box-sizing: inherit;
+	font-family: 'Baskerville', serif;
 }
 
 h1,
 h2 {
 	font-family: 'Supermercado One', sans-serif;
-}
-
-p {
-	font-family: 'Baskerville', serif;
 }
 
 a {
