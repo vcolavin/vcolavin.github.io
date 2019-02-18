@@ -21,7 +21,8 @@ function runTheCode() {
 
 	animationToggle.addEventListener('change', () => {
 		const aHundredDays = 100 * 24 * 60 * 60 * 1000;
-		const date = new Date().setTime(new Date().getTime() + aHundredDays);
+		const date = new Date();
+		date.setTime(new Date().getTime() + aHundredDays);
 
 		if (animationToggle.checked) {
 			mainContainer.classList.add('disable-animation');
@@ -30,7 +31,7 @@ function runTheCode() {
 
 		document.cookie = `${animationCookieName}=${
 			animationToggle.checked
-		}; expires=${date};path=/`;
+		}; expires=${date.toGMTString()};path=/`;
 	});
 
 	// face stuff
