@@ -5,8 +5,6 @@
 	--face-animation-duration: 2s;
 	--face-side: 300px;
 	--face-starting-position: calc(-1 * (var(--face-side) + 200px));
-	/* magic number to get the halves to line up */
-	/* --face-bottom-top: calc(var(--face-side) * 0.716); */
 
 	--lighter: #ffedcc;
 	--light: #ffd280;
@@ -29,7 +27,7 @@
 
 * {
 	box-sizing: inherit;
-	font-family: 'Baskerville', serif;
+	font-family: 'Crimson Text', serif;
 }
 
 h1,
@@ -39,7 +37,7 @@ h2 {
 
 a {
 	text-decoration: none;
-	color: var(--main-color);
+	color: var(--dark);
 }
 
 a:hover,
@@ -146,18 +144,18 @@ button:focus {
 }
 
 .open .face-top {
-	transform: translateY(-100px) rotate(-90deg);
+	transform: translateY(-150px) rotate(-90deg);
 }
 
 @media (min-width: 500px) {
 	.open .face-top {
-		transform: translate(-100px, -100px) rotate(-30deg);
+		transform: translate(-100px, -150px) rotate(-30deg);
 	}
 }
 
 @media (min-width: 750px) {
 	.open .face-top {
-		transform: translate(-75px, -100px) rotate(-30deg);
+		transform: translate(-75px, -150px) rotate(-30deg);
 	}
 }
 
