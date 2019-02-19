@@ -1,3 +1,9 @@
+// hack because namecheap won't let you redirect http to https
+// probably for a good reason that I don't understand
+if (window.location.protocol === 'http:') {
+	window.location.protocol === 'https:';
+}
+
 window.onload = runTheCode;
 
 const faceAnimationDuration = 0.75;
@@ -11,32 +17,17 @@ const animationCookieName = 'animationDisabled';
 
 function runTheCode() {
 	const face = document.querySelector('#face');
-	const animationToggle = document.querySelector('#animation-toggle');
-	const mainContainer = document.querySelector('#main-container');
-
-	if (document.cookie.indexOf(`${animationCookieName}=true`) >= 0) {
-		mainContainer.classList.add('disable-animation');
-		face.classList.add('open');
-		animationToggle.checked = true;
-	}
-
-	animationToggle.addEventListener('change', () => {
-		const aHundredDays = 100 * 24 * 60 * 60 * 1000;
-		const date = new Date();
-		date.setTime(new Date().getTime() + aHundredDays);
-
-		if (animationToggle.checked) {
-			mainContainer.classList.add('disable-animation');
-			face.classList.add('open');
-		}
-
-		document.cookie = `${animationCookieName}=${
-			animationToggle.checked
-		}; expires=${date.toGMTString()};path=/`;
-	});
+	const container = document.querySelector('#main-container');
 
 	// face stuff
 	let faceOpen = false;
+
+	if (window.location.hash.indexOf('welcome') >= 0) {
+		faceOpen = true;
+		face.classList.add('open');
+		container.classList.add('skip-animation');
+	}
+
 	face.addEventListener('click', () => {
 		if (faceOpen) {
 			return;
@@ -45,5 +36,9 @@ function runTheCode() {
 		faceOpen = true;
 
 		face.classList.add('open');
+
+		window.setTimeout(() => {
+			window.location.hash = 'welcome';
+		}, faceAnimationDuration * 1000);
 	});
 }
