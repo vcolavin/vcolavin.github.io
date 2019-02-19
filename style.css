@@ -77,14 +77,6 @@ button:focus {
 	width: 100vw;
 }
 
-/* @media screen and (prefers-reduced-motion: reduce) {
-	* {
-		-webkit-animation: none !important;
-		animation: none !important;
-		transition: none !important;
-	}
-} */
-
 .skip-animation * {
 	-webkit-animation: none !important;
 	animation: none !important;
