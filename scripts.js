@@ -1,7 +1,7 @@
 // hack because namecheap won't let you redirect http to https
 // probably for a good reason that I don't understand
 if (window.location.protocol === 'http:') {
-	window.location.protocol === 'https:';
+	window.location.protocol = 'https:';
 }
 
 window.onload = runTheCode;
