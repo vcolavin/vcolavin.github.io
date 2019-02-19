@@ -136,12 +136,12 @@ button:focus {
 }
 
 .open .face-top {
-	transform: translateY(-150px) rotate(-90deg);
+	transform: translate(-110px, -70px) rotate(-40deg);
 }
 
 @media (min-width: 500px) {
 	.open .face-top {
-		transform: translate(-100px, -150px) rotate(-30deg);
+		transform: translate(-130px, -150px) rotate(-30deg);
 	}
 }
 
