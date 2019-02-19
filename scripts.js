@@ -18,7 +18,6 @@ function runTheCode() {
 	const container = document.querySelector('#main-container');
 	const replayButton = document.querySelector('#replay-button');
 
-	// face stuff
 	let faceOpen = false;
 
 	if (window.location.hash.indexOf('welcome') >= 0) {
@@ -28,11 +27,14 @@ function runTheCode() {
 	}
 
 	replayButton.addEventListener('click', () => {
+		faceOpen = false;
+		face.classList.remove('open');
+
 		container.classList.remove('skip-animation');
 
-		window.location.hash = '';
-		face.classList.remove('open');
-		faceOpen = false;
+		window.setTimeout(() => {
+			window.location.hash = '';
+		}, faceAnimationDuration * 1000);
 	});
 
 	face.addEventListener('click', () => {
