@@ -13,11 +13,10 @@ document.documentElement.style.setProperty(
 	`${faceAnimationDuration}s`
 );
 
-const animationCookieName = 'animationDisabled';
-
 function runTheCode() {
 	const face = document.querySelector('#face');
 	const container = document.querySelector('#main-container');
+	const replayButton = document.querySelector('#replay-button');
 
 	// face stuff
 	let faceOpen = false;
@@ -27,6 +26,14 @@ function runTheCode() {
 		face.classList.add('open');
 		container.classList.add('skip-animation');
 	}
+
+	replayButton.addEventListener('click', () => {
+		container.classList.remove('skip-animation');
+
+		window.location.hash = '';
+		face.classList.remove('open');
+		faceOpen = false;
+	});
 
 	face.addEventListener('click', () => {
 		if (faceOpen) {

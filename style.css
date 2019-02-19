@@ -7,6 +7,12 @@
 	--face-starting-position: calc(-1 * (var(--face-side) + 200px));
 	/* magic number to get the halves to line up */
 	/* --face-bottom-top: calc(var(--face-side) * 0.716); */
+
+	--lighter: #ffedcc;
+	--light: #ffd280;
+	--main-color: orange;
+	--dark: darkorange;
+	--darker: #cc7000;
 }
 
 @media (min-width: 500px) {
@@ -15,9 +21,9 @@
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 750px) {
 	:root {
-		font-size: 40px;
+		font-size: 30px;
 	}
 }
 
@@ -33,16 +39,39 @@ h2 {
 
 a {
 	text-decoration: none;
-	color: orange;
-}
-
-a:visited {
-	color: darkorange;
+	color: var(--main-color);
 }
 
 a:hover,
 a:focus {
-	color: #e67e00;
+	color: var(--darker);
+}
+
+button {
+	cursor: pointer;
+	white-space: nowrap;
+	outline: none;
+	background-color: transparent;
+	color: black;
+	font-size: 1rem;
+	box-shadow: 0;
+	border: 1px solid var(--main-color);
+	border-radius: 10px;
+
+	padding: 5px 10px;
+}
+
+button:hover {
+	background-color: var(--lighter);
+}
+
+button:active {
+	background-color: var(--light);
+}
+
+button:focus {
+	outline: 1px dashed var(--darker);
+	background-color: var(--light);
 }
 
 .main-container {
@@ -69,7 +98,7 @@ a:focus {
 
 	font-size: 3rem;
 	color: white;
-	background-color: darkorange;
+	background-color: var(--dark);
 
 	padding: 0 0.5rem 0 1rem;
 
@@ -126,9 +155,9 @@ a:focus {
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 750px) {
 	.open .face-top {
-		transform: translateY(-100px) rotate(-30deg);
+		transform: translate(-75px, -100px) rotate(-30deg);
 	}
 }
 
@@ -154,20 +183,9 @@ a:focus {
 	transform: translateX(-50%);
 	top: calc(var(--face-side) + 20px);
 	transition: all 0.2s;
-	font-size: 1rem;
-
-	white-space: nowrap;
-
-	outline: none;
-	background-color: transparent;
-	color: black;
-	font-size: 1rem;
-	box-shadow: 0;
-	border: 0;
 }
 
 .face-toggle-button:focus {
-	outline: 1px dashed darkorange;
 	background-color: transparent;
 }
 
@@ -198,8 +216,14 @@ a:focus {
 	transition: all 0.75s 0.5s;
 }
 
-.intro-text {
-	margin-bottom: 0.8rem;
+.replay-button {
+	margin-bottom: 0.2rem;
+	font-size: 0.7rem;
+}
+
+.intro-text,
+.nav-menu {
+	margin-bottom: 0.5rem;
 }
 
 @-webkit-keyframes face-slide {
