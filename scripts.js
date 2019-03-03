@@ -18,19 +18,16 @@ function runTheCode() {
 	const container = document.querySelector('#main-container');
 	const replayButton = document.querySelector('#replay-button');
 
-	let faceOpen = false;
-
 	if (window.location.hash.indexOf('welcome') >= 0) {
-		faceOpen = true;
-		face.classList.add('open');
 		container.classList.add('skip-animation');
+		face.classList.add('open');
 	}
 
-	replayButton.addEventListener('click', () => {
-		faceOpen = false;
-		face.classList.remove('open');
+	face.classList.remove('gone');
 
+	replayButton.addEventListener('click', () => {
 		container.classList.remove('skip-animation');
+		face.classList.remove('open');
 
 		window.setTimeout(() => {
 			window.location.hash = '';
@@ -38,12 +35,6 @@ function runTheCode() {
 	});
 
 	face.addEventListener('click', () => {
-		if (faceOpen) {
-			return;
-		}
-
-		faceOpen = true;
-
 		face.classList.add('open');
 
 		window.setTimeout(() => {

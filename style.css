@@ -78,8 +78,6 @@ button:focus {
 }
 
 .skip-animation * {
-	-webkit-animation: none !important;
-	animation: none !important;
 	transition: none !important;
 }
 
@@ -103,9 +101,13 @@ button:focus {
 	border-top-right-radius: 0.6rem;
 }
 
+.face.gone {
+	transform: translateX(var(--face-starting-position));
+}
+
 .face {
-	animation: face-slide 2s ease-out;
-	-webkit-animation: face-slide 2s ease-out;
+	transform: translateX(0);
+	transition: transform 1s ease-out 0.5s;
 
 	position: absolute;
 
@@ -158,7 +160,7 @@ button:focus {
 
 .face-bottom {
 	left: -1px;
-	bottom: 0;
+	bottom: -5px;
 }
 
 .open .face-bottom {
@@ -221,32 +223,4 @@ button:focus {
 .intro-text,
 .nav-menu {
 	margin-bottom: 0.5rem;
-}
-
-@-webkit-keyframes face-slide {
-	0% {
-		transform: translateX(var(--face-starting-position));
-	}
-
-	50% {
-		transform: translateX(var(--face-starting-position));
-	}
-
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@keyframes face-slide {
-	0% {
-		transform: translateX(var(--face-starting-position));
-	}
-
-	50% {
-		transform: translateX(var(--face-starting-position));
-	}
-
-	100% {
-		transform: translateX(0);
-	}
 }
