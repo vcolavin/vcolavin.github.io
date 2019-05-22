@@ -15,7 +15,7 @@
 
 @media (min-width: 500px) {
 	:root {
-		font-size: calc(15px + 2vw);
+		font-size: calc(15px + 1.5vw);
 	}
 }
 
@@ -30,9 +30,20 @@
 	font-family: 'Crimson Text', serif;
 }
 
+img {
+	pointer-events: none;
+}
+
 h1,
 h2 {
 	font-family: 'Supermercado One', sans-serif;
+}
+
+a,
+p,
+li,
+button {
+	font-family: 'Crimson Text', serif;
 }
 
 a {
@@ -164,12 +175,18 @@ button:focus {
 }
 
 .open .face-bottom {
-	bottom: -100px;
+	bottom: -450px;
+}
+
+@media (min-width: 300px) {
+	.open .face-bottom {
+		bottom: -250px;
+	}
 }
 
 @media (min-width: 500px) {
 	.open .face-bottom {
-		bottom: -200px;
+		bottom: -175px;
 	}
 }
 
