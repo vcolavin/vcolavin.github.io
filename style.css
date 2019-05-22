@@ -44,6 +44,7 @@ p,
 li,
 button {
 	font-family: 'Crimson Text', serif;
+	line-height: 1.2rem;
 }
 
 a {
@@ -175,16 +176,10 @@ button:focus {
 }
 
 .open .face-bottom {
-	bottom: -450px;
+	bottom: -350px;
 }
 
 @media (min-width: 300px) {
-	.open .face-bottom {
-		bottom: -250px;
-	}
-}
-
-@media (min-width: 500px) {
 	.open .face-bottom {
 		bottom: -175px;
 	}
