@@ -42,7 +42,8 @@ h2 {
 a,
 p,
 li,
-button {
+button,
+nav {
 	font-family: 'Crimson Text', serif;
 	line-height: 1.2rem;
 }
