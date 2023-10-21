@@ -26,6 +26,7 @@
     a:visited,
     a:hover {
       color: #eee;
+      text-decoration: none;
     }
 
     .container {
@@ -42,22 +43,27 @@
       font-weight: 600;
     }
 
+    .description {
+      margin: 0 0 25px 0;
+    }
+
     .email-field {
-      height: 30px;
+      height: 35px;
       border-radius: 3px;
       border: none;
     }
 
     .submit {
-      background-color: #ddd;
+      background-color: #eaeaea;
       border: none;
-      height: 30px;
+      height: 35px;
       border-radius: 3px;
-      padding: 8px;
+      padding: 8px 15px;
       vertical-align: center;
       cursor: pointer;
       line-height: 5px;
       margin-left: 4px;
+      font-size: 12px;
     }
 
     .submit:hover,
@@ -70,13 +76,13 @@
     }
 
     form {
-      margin-bottom: 20px;
+      margin-bottom: 35px;
     }
   </style>
   <body>
     <div class="container">
       <h1>Threshold Health</h1>
-      <p>You know your patients best.</p>
+      <p class="description">You know your patients best.</p>
       <form>
         <input class="email-field" type="text" />
         <input class="submit" type="submit" value="Stay up to date" />
